@@ -76,7 +76,7 @@ export default {
             email: this.email,
           }).then(() => {
             this.$router.push("/");
-          }, err => this.errors.push(err.response.data.errors));
+          }, err => this.errors.push(err.response.data["message"]));
         } else {
           UserDataService.updateUser(this.id, {
             id: this.id,
@@ -85,7 +85,7 @@ export default {
             email: this.email,
           }).then(() => {
             this.$router.push("/");
-          }, err => this.errors.push(err.response.data.errors));
+          }, err => this.errors.push(err.response.data["message"]));
         }
       }
     },
